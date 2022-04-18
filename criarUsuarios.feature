@@ -18,7 +18,7 @@ Feature: Criar Usuários
         Then status 400
 
     Scenario: Criar usuário com e-mail existente
-        And request {"name": "Romerito","email": "romerito@raro.com"}
+        And request {"name": "Romerito7","email": "romerito@raro.com"}
         When method post
         Then status 422
         And match response contains {"error":"User already exists."}
