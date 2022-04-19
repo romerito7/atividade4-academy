@@ -17,6 +17,8 @@ Feature: Encontrar Usuários
         When path "users/"+idUsuario
         And method get
         Then status 200
+        And match response contains  {id: "#string", name: "#string", email: "#string", createdAt: "#string", updatedAt: "#string"} 
+        And match response contains  usuarioPadrao 
 
     Scenario: Usuario não encontrado
         When path "91629ed4-74f9-4e19-9581-a34ff96bf49h"

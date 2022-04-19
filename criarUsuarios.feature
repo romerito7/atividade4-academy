@@ -11,6 +11,8 @@ Feature: Criar Usuários
         And request usuarioPadrao
         When method post
         Then status 201
+        And match response contains  {id: "#string", name: "#string", email: "#string", createdAt: "#string", updatedAt: "#string"} 
+        And match response contains  usuarioPadrao 
 
     Scenario: Criar usuário com e-mail inválido
         And request {"name": "Romerito","email": "romerito"}
